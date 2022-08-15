@@ -1,7 +1,7 @@
 import Image from "../components/image";
 import Title from "../components/title";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -11,16 +11,16 @@ export default function Home() {
       </Title>
 
       <div className={"m-12 flex gap-12"}>
-        {[...Array(3)].map((x, i) => {
-          const id = i + 1;
-          return (
-            <Link key={id} href={"/" + id}>
-              <a className={"block h-60 w-1/3"}>
-                <Image overview id={id} />
-              </a>
-            </Link>
-          );
-        })}
+        {[...Array(3)].map((x, id) => (
+          <Link key={id} href={"/" + id}>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              className={"cursor-pointer block h-60 w-1/3"}
+            >
+              <Image overview id={id} />
+            </motion.a>
+          </Link>
+        ))}
       </div>
     </div>
   );

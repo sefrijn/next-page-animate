@@ -10,7 +10,7 @@ export default function Page(props) {
     <motion.div
       className={"h-screen w-full m-0 p-0 overflow-auto"}
       initial={{ backgroundColor: "#fff" }}
-      animate={{ backgroundColor: "#eff0f3" }}
+      animate={{ backgroundColor: "#efeaf6" }}
       exit={{
         backgroundColor: "#fff",
         transition: { duration: 0.3, delay: 0.4 },
@@ -42,9 +42,9 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const routes = [
+    { params: { page: "0" } },
     { params: { page: "1" } },
     { params: { page: "2" } },
-    { params: { page: "3" } },
   ];
   return {
     paths: routes,
