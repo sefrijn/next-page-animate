@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
 
-export default function Image({ id }) {
+export default function Image({ main = false, id }) {
   return (
     <motion.div
-      transition={{ duration: 0.2 }}
-      initial={{ opacity: 0.2 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0.2 }}
-      className={"relative w-full h-full"}
       layoutId={`wrapper_image_${id}`}
+      initial={!main ? { opacity: 0 } : null}
+      animate={
+        !main ? { opacity: 1, transition: { delay: 0.2 } } : { opacity: 1 }
+      }
+      exit={!main ? { opacity: 0 } : null}
+      transition={{ duration: 0.2 }}
+      className={"relative w-full h-full"}
     >
-      <motion.img
-        className={"h-full w-full object-cover"}
+      <img
+        className={"shadow-lg h-full w-full object-cover"}
         src={`/mountain${id}.jpeg`}
       />
     </motion.div>
