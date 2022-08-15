@@ -14,10 +14,6 @@ export default function Home() {
     if (page) setMain(page);
   }, [page]);
 
-  useEffect(() => {
-    router.push("/");
-  }, [prev]);
-
   return (
     <div className={"h-screen w-full m-0 p-0 overflow-auto bg-white"}>
       <Title>

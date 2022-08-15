@@ -8,7 +8,7 @@ export default function BackLink({ prev }) {
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 1 }}
     >
-      <Link href={{ pathname: "/", query: { prev: prev } }}>
+      <Link href={{ pathname: "/", query: { prev: prev } }} as={"/"}>
         <a
           className={
             "text-pink-700 uppercase tracking-widest text-sm hover:underline font-semibold"
